@@ -48,4 +48,3 @@ After the Market data aggregator is started, it will push data in the following 
 ```
 Here `"ts"` is the timestamp of the ticker in milliseconds (not the time when the message was received or sent by server).
 In this example, the timestamp of huobi and okx differs by 500ms. Part of the reason is system latency. Moreover, huobi and okx push data at different rates which might also lead to timestamp misalignment.
-
