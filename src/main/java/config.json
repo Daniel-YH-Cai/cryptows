@@ -1,0 +1,10 @@
+{
+  "huobi": {
+    "url": "",
+    "subscribeMessages":[]
+  },
+  "okx": {
+    "url": "",
+    "subscribeMessages": []
+  }
+}
