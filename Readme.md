@@ -1,12 +1,12 @@
 # Crypto arbitrage data aggregator
 A real-time system that collects data from multiple websocket api and perform alignment based on timestamp.
 ## Overview
-Market data aggregator gather data from multiple exchanges and combine them into one single message based on time. To run the subscriber to receive market data from okx and huobi:
+Market data aggregator gather data from multiple exchanges and combine them into one single message based on time. To run the subscriber which consumes huobi and okx websocket api:
 ``java -jar subscriber-simple-1.0.jar``
 Note that `java --version` should be 11. Rabbitmq are required. To see how this program can support crypto arbitrage,
 check out `https://github.com/Daniel-YH-Cai/simple-strat`.
 ## Run result
-Once the program has started, it will connect to rabbitmq and set up the queue and exchange. After that, it will establish websocket connection to the crypto exchanges, huobi and okx using OKHTTP. Time alignment is performed by buffering the messages and push only when the buffer has market data from every exchange. Check out `TimeAlignHandler.java` for more.
+Once the program has started, it will connect to rabbitmq and set up the queue and exchange. After that, it will establish websocket connection to the crypto exchanges, huobi and okx, using OKHTTP. Time alignment is performed by buffering the messages and push only when the buffer has market data from every exchange. Check out `TimeAlignHandler.java` for more.
 ```
 17:27:39.628 [main] INFO  apis.MessageQueue - Connected to ampq:amqp://guest@0:0:0:0:0:0:0:1:5672/
 17:27:39.694 [main] INFO  exchangehandlers.TimeAlignHandler - Queue declared with name: timealign.ticker
